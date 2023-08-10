@@ -5,5 +5,6 @@ const sequelize = new Sequelize("chatbot", "root", "0321", {
   logging: false,
 });
 
-sequelize.sync(true);
+sequelize.sync({ alter: true });
+
 export default sequelize;

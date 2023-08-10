@@ -11,14 +11,30 @@ export const Steps = sequelize.define(
       allowNull: false,
       unique: true,
     },
+    option_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     step_number: {
       type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
     },
-    option_id: {
+    option_text: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    subCategory_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    next_step_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    response: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
   },
   {
