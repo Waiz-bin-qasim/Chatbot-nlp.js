@@ -1,5 +1,5 @@
 import { Categories } from "./categories.model.js";
-import { Steps } from "./step.model.js";
+import { Options } from "./Options.model.js";
 import { subCategories } from "./subCategories.model.js";
 
 Categories.hasMany(subCategories, {
@@ -9,11 +9,11 @@ Categories.hasMany(subCategories, {
 });
 subCategories.belongsTo(Categories);
 
-Steps.hasMany(subCategories, {
+subCategories.hasMany(Options, {
   foreignKey: {
     name: "subCategory_id",
   },
 });
-subCategories.belongsTo(Steps);
+Options.belongsTo(subCategories);
 
-export { Categories, subCategories, Steps };
+export { Categories, subCategories, Options };

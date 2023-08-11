@@ -9,12 +9,12 @@ import {
 // import all controllers
 // import SessionController from './app/controllers/SessionController';
 
-const categroiesRoutes = new Router();
+const categoriesRoutes = new Router();
 
-// Add categroiesRoutes
-categroiesRoutes.get("/", getCategory);
-categroiesRoutes.post("/", addCategory);
-categroiesRoutes.put("/:category_id", updateCategory);
-categroiesRoutes.delete("/:category_id", deleteCategory);
+// Add categoriesRoutes
+categoriesRoutes.get("/", getCategory);
+categoriesRoutes.post("/", addCategory);
+categoriesRoutes.put("/:category_id", updateCategory);
+categoriesRoutes.delete("/:category_id", deleteCategory);
 
-export default categroiesRoutes;
+export default categoriesRoutes;

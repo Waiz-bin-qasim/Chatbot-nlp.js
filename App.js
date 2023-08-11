@@ -1,15 +1,15 @@
 import express from "express";
-import chatBotRoutes from "./Routes/chatbot.Routes.js";
-import categroiesRoutes from "./Routes/Categories.Routes.js";
+import messageRoutes from "./Routes/Message.Routes.js";
+import categoriesRoutes from "./Routes/Categories.Routes.js";
 import subCategoryRoute from "./Routes/subCategories.Routes.js";
-import stepRoutes from "./Routes/Steps.Routes.js";
+import optionsRoutes from "./Routes/Options.Routes.js";
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use("/message", chatBotRoutes);
-app.use("/categories", categroiesRoutes);
+app.use("/message", messageRoutes);
+app.use("/categories", categoriesRoutes);
 app.use("/subCategories", subCategoryRoute);
-app.use("/step", stepRoutes);
+app.use("/options", optionsRoutes);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

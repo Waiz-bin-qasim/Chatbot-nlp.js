@@ -6,11 +6,11 @@ export const getCategory = async (req, res) => {
     categories = await Categories.findAll({
       include: { model: subCategories },
     });
-    res.send(categories);
   } catch (error) {
     console.log(error);
-    res.status(400).send(error);
+    return res.status(400).send(error);
   }
+  res.send(categories);
 };
 
 export const addCategory = async (req, res) => {
@@ -20,11 +20,11 @@ export const addCategory = async (req, res) => {
     categories = await Categories.create(categories, {
       fields: ["category_name"],
     });
-    res.send(categories);
   } catch (error) {
     console.log(error.errors);
-    res.status(400).send({ err: error });
+    return res.status(400).send({ err: error });
   }
+  res.send(categories);
 };
 
 export const updateCategory = (req, res) => {};
