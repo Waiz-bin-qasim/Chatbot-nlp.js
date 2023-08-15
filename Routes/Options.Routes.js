@@ -4,7 +4,7 @@ import {
   deleteOptions,
   getOptions,
   updateOptions,
-} from "../Controller/Options.Controller.js";
+} from "../Controller/options.Controller.js";
 
 // import all controllers
 // import SessionController from './app/controllers/SessionController';

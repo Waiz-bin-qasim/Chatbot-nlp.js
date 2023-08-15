@@ -1,4 +1,4 @@
-import { Options } from "../Model/Associations.model.js";
+import { Options } from "../Model/associations.Model.js";
 
 export const getOptions = async (req, res) => {
   let opt;

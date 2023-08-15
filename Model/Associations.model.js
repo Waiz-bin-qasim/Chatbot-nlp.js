@@ -1,10 +1,11 @@
-import { Categories } from "./categories.model.js";
-import { Options } from "./Options.model.js";
-import { subCategories } from "./subCategories.model.js";
+import { Categories } from "./categories.Model.js";
+import { Options } from "./options.Model.js";
+import { subCategories } from "./subCategories.Model.js";
 
 Categories.hasMany(subCategories, {
   foreignKey: {
     name: "category_id",
+    as: "options",
   },
 });
 subCategories.belongsTo(Categories);
@@ -12,6 +13,7 @@ subCategories.belongsTo(Categories);
 subCategories.hasMany(Options, {
   foreignKey: {
     name: "subCategory_id",
+    as: "options",
   },
 });
 Options.belongsTo(subCategories);

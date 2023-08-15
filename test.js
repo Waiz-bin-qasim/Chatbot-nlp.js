@@ -5,8 +5,13 @@ import {
 } from "./Model/Associations.model.js";
 
 (async () => {
-  const res = await subCategories.findAll({
-    include: { model: Options, attributes: ["option_text"] },
+  const res = await Categories.findAll({
+    include: {
+      model: subCategories,
+      include: {
+        model: Options,
+      },
+    },
   });
-  console.log(res);
+  console.log(Object.keys(res.dataValues));
 })();

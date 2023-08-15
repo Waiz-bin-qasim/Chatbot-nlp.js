@@ -1,8 +1,8 @@
 import express from "express";
 import messageRoutes from "./Routes/Message.Routes.js";
-import categoriesRoutes from "./Routes/Categories.Routes.js";
+import categoriesRoutes from "./Routes/categories.Routes.js";
 import subCategoryRoute from "./Routes/subCategories.Routes.js";
-import optionsRoutes from "./Routes/Options.Routes.js";
+import optionsRoutes from "./Routes/options.Routes.js";
 const app = express();
 const port = 3000;
 

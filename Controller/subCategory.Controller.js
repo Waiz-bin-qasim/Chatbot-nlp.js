@@ -1,4 +1,4 @@
-import { Categories, subCategories } from "../Model/Associations.model.js";
+import { Categories, subCategories } from "../Model/associations.Model.js";
 
 export const getSubCategories = async (req, res) => {
   let subcategories;
