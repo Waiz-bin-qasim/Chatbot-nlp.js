@@ -1,4 +1,5 @@
 import { Categories, subCategories } from "../Model/associations.Model.js";
+import { chatBotInit } from "../helper/chat-bot.Helper.js";
 
 export const getCategory = async (req, res) => {
   let categories;
@@ -20,6 +21,7 @@ export const addCategory = async (req, res) => {
     categories = await Categories.create(categories, {
       fields: ["category_name"],
     });
+    await chatBotInit();
   } catch (error) {
     console.log(error.errors);
     return res.status(400).send({ err: error });

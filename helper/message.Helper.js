@@ -3,7 +3,7 @@ import {
   Options,
   subCategories,
 } from "../Model/associations.Model.js";
-import { updateStepNumber } from "./step-number.Handler.js";
+import { updateStepNumber } from "./step-number.Helper.js";
 
 const responseForStepTwo = async (message) => {
   let res;

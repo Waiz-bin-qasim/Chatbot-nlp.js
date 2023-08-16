@@ -1,14 +1,15 @@
 import { Categories } from "../Model/categories.Model.js";
 import { chat_bot_logs } from "../Model/chat-bot-logs.Model.js";
-import { getStepNumber } from "../helper/step-number.Handler.js";
+import { getStepNumber } from "../helper/step-number.Helper.js";
 import { messageHandler } from "../helper/message.Helper.js";
+import { predict } from "../helper/chat-bot.Helper.js";
 
 export const chatBot = async (req, res) => {
-  const { message, user_id } = req.body;
+  const { user_id, message } = req.body;
   let response, step_number;
   try {
-    //if user already exist in the logs
     step_number = await getStepNumber(user_id);
+    //if user already exist in the logs
     if (user_id && step_number) {
       response = await messageHandler(message, user_id, step_number);
     } else {
@@ -18,6 +19,11 @@ export const chatBot = async (req, res) => {
         attributes: ["category_name"],
       });
       response = { options: response, user_id: log.user_id };
+    }
+    if (response.length === 0) {
+      response = await predict(message);
+      console.log(response);
+      response = response.answers;
     }
   } catch (err) {
     console.log(err);

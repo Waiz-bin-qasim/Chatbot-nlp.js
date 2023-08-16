@@ -2,16 +2,23 @@ import {
   Categories,
   Options,
   subCategories,
-} from "./Model/Associations.model.js";
+} from "./Model/associations.Model.js";
 
 (async () => {
   const res = await Categories.findAll({
     include: {
       model: subCategories,
-      include: {
-        model: Options,
-      },
+      include: Options,
     },
   });
-  console.log(Object.keys(res.dataValues));
+  // console.log(res);
+  res.forEach((category) => {
+    console.log(`Category: ${category.category_id}`);
+    category.subCategories.forEach((subCategory) => {
+      console.log(`  SubCategory: ${subCategory.subCategory_id}`);
+      subCategory.Options.forEach((option) => {
+        console.log(`    Option: ${option.option_id}`);
+      });
+    });
+  });
 })();

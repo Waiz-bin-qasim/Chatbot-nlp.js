@@ -20,6 +20,7 @@ export const addSubCategories = async (req, res) => {
     subcategories = await subCategories.create(subcategories, {
       fields: ["subCategory_name", "category_id"],
     });
+    await chatBotInit();
   } catch (error) {
     console.log(error);
     return res.status(400).send({ err: error });
