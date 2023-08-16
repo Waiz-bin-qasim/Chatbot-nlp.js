@@ -1,4 +1,4 @@
-import sequelize from "../Config/Sequelize.js";
+import sequelize from "../Config/sequelize.js";
 import { DataTypes } from "sequelize";
 
 export const Categories = sequelize.define(
