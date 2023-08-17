@@ -1,10 +1,10 @@
-import sequelize from "../Config/Sequelize.js";
+import sequelize from "../Config/sequelize.js";
 import { DataTypes } from "sequelize";
 
 export const chatbot = sequelize.define(
   "chatbot",
   {
-    step: {  
+    step: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
