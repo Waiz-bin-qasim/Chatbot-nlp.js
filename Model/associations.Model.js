@@ -21,8 +21,8 @@ subCategories.hasMany(Options, {
 Options.belongsTo(subCategories);
 
 User.hasOne(chat_bot_logs, {
-  foreignKey: "user_id",
+  foreignKey: { name: "user_id" },
 });
 chat_bot_logs.belongsTo(User);
 
-export { Categories, subCategories, Options, User };
+export { Categories, subCategories, Options, User, chat_bot_logs };
