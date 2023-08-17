@@ -2,7 +2,7 @@ import {
   Categories,
   Options,
   subCategories,
-} from "../Model/associations.Model.js";
+} from "../Model/associations.model.js";
 import { updateStepNumber } from "./step-number.Helper.js";
 
 const responseForStepTwo = async (message) => {
