@@ -4,10 +4,12 @@ import categoriesRoutes from "./Routes/categories.Routes.js";
 import subCategoryRoute from "./Routes/subCategories.Routes.js";
 import optionsRoutes from "./Routes/options.Routes.js";
 import { chatBotInit } from "./helper/chat-bot.Helper.js";
+import userRoutes from "./Routes/user.Routes.js";
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use("/user", userRoutes);
 app.use("/message", messageRoutes);
 app.use("/categories", categoriesRoutes);
 app.use("/subCategories", subCategoryRoute);

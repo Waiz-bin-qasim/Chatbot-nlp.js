@@ -5,6 +5,7 @@ import {
   getOptions,
   updateOptions,
 } from "../Controller/options.Controller.js";
+import { tokenVerification } from "../Middlewares/auth.Middleware.js";
 
 // import all controllers
 // import SessionController from './app/controllers/SessionController';
@@ -12,8 +13,8 @@ import {
 const optionsRoutes = new Router();
 
 // Add optionsRoutes
-optionsRoutes.get("/", getOptions);
-optionsRoutes.post("/", addOptions);
+optionsRoutes.get("/", tokenVerification, getOptions);
+optionsRoutes.post("/", tokenVerification, addOptions);
 optionsRoutes.put("/", updateOptions);
 optionsRoutes.delete("/", deleteOptions);
 
