@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { chatBot } from "../Controller/Message.Controller.js";
+import { chatBot } from "../Controller/message-temp.Controller.js";
+import { tokenVerification } from "../Middlewares/auth.Middleware.js";
 
 // import all controllers
 // import SessionController from './app/controllers/SessionController';
@@ -7,7 +8,7 @@ import { chatBot } from "../Controller/Message.Controller.js";
 const messageRoutes = new Router();
 
 // Add messageRoutes
-messageRoutes.post("/", chatBot);
+messageRoutes.post("/", tokenVerification, chatBot);
 // messageRoutes.get('/', SessionController.store);
 // messageRoutes.put('/', SessionController.store);
 // messageRoutes.delete('/', SessionController.store);

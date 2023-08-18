@@ -3,7 +3,7 @@ import {
   Categories,
   subCategories,
   Options,
-} from "../Model/associations.model.js";
+} from "../Model/associations-temp.model.js";
 import fs from "fs";
 
 const getAllData = async () => {

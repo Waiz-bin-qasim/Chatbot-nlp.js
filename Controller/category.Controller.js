@@ -1,4 +1,4 @@
-import { Categories, subCategories } from "../Model/associations.Model.js";
+import { Categories, subCategories } from "../Model/associations-temp.model.js";
 import { chatBotInit } from "../helper/chat-bot.Helper.js";
 
 export const getCategory = async (req, res) => {
