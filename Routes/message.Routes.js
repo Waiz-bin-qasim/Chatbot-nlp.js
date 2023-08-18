@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { chatBot } from "../Controller/message-temp.Controller.js";
+import { chatBot } from "../Controller/message.Controller.js";
 import { tokenVerification } from "../Middlewares/auth.Middleware.js";
 
 // import all controllers

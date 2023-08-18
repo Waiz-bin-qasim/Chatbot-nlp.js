@@ -1,7 +1,7 @@
 import { Categories } from "./categories.Model.js";
 import { chat_bot_logs } from "./chat-bot-logs.Model.js";
 import { Options } from "./options.Model.js";
-import { subCategories } from "./subCategories.Model.js";
+import { subCategories } from "./sub-categories.model.js";
 import { User } from "./user.Model.js";
 
 Categories.hasMany(subCategories, {
