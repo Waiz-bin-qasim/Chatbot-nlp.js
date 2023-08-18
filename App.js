@@ -1,7 +1,7 @@
 import express from "express";
-import messageRoutes from "./Routes/Message.Routes.js";
+import messageRoutes from "./Routes/message.Routes.js";
 import categoriesRoutes from "./Routes/categories.Routes.js";
-import subCategoryRoute from "./Routes/subCategories.Routes.js";
+import subCategoryRoute from "./Routes/sub-categories.Routes.js";
 import optionsRoutes from "./Routes/options.Routes.js";
 import { chatBotInit } from "./helper/chat-bot.Helper.js";
 import userRoutes from "./Routes/user.Routes.js";
