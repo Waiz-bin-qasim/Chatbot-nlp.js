@@ -19,3 +19,5 @@ app.listen(port, async () => {
   await chatBotInit();
   console.log(`Example app listening on port ${port}!`);
 });
+
+// compression , express-rate-limit , CRSF
