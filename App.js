@@ -5,10 +5,16 @@ import subCategoryRoute from "./Routes/sub-categories.Routes.js";
 import optionsRoutes from "./Routes/options.Routes.js";
 import { chatBotInit } from "./helper/chat-bot.Helper.js";
 import userRoutes from "./Routes/user.Routes.js";
+import { expressRateLimit } from "./Config/express-rate-limit.js";
+
 const app = express();
 const port = 3000;
 
+// middleWares
 app.use(express.json());
+app.use(expressRateLimit); //->To Avoid DDos
+
+// Routes
 app.use("/user", userRoutes);
 app.use("/message", messageRoutes);
 app.use("/categories", categoriesRoutes);
@@ -20,4 +26,4 @@ app.listen(port, async () => {
   console.log(`Example app listening on port ${port}!`);
 });
 
-// compression , express-rate-limit , CRSF
+// compression , express-rate-limit , CSRF
