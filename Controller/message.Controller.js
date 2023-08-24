@@ -9,18 +9,23 @@ export const chatBot = async (req, res) => {
   let response, step_number;
   try {
     step_number = await getStepNumber(user_id);
-    //if user already exist in the logs
-    if (user_id && step_number) {
+    //if logs exist
+    if (step_number) {
+      console.log(user_id, step_number, message);
       response = await messageHandler(message, user_id, step_number);
     } else {
-      //create user if does not exist
-      const log = await chat_bot_logs.create({ current_step: 1 });
+      //create log if does not exist
+      const log = await chat_bot_logs.create({
+        current_step: 1,
+        user_id: user_id,
+      });
       response = await Categories.findAll({
         attributes: ["category_name"],
       });
       response = { options: response, user_id: log.user_id };
     }
-    if (response.length === 0) {
+    console.log(response);
+    if (!response || response.length === 0) {
       response = await predict(message);
       console.log(response);
       response = response.answers;

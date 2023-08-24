@@ -2,7 +2,7 @@ import {
   Categories,
   Options,
   subCategories,
-} from "../Model/associations.Model.js";
+} from "../Model/associations.model.js";
 import { updateStepNumber } from "./step-number.Helper.js";
 
 const responseForStepTwo = async (message) => {
@@ -60,6 +60,7 @@ const responseForStepFour = async (message) => {
 
 export const messageHandler = async (message, user_id, step_number) => {
   let response;
+  console.log(user_id);
   try {
     switch (step_number) {
       case 1:
@@ -74,11 +75,11 @@ export const messageHandler = async (message, user_id, step_number) => {
       default:
         break;
     }
-    if (response.length > 0) {
+    if (response && response.length > 0) {
       await updateStepNumber(user_id, step_number);
     }
   } catch (error) {
-    return error;
+    throw error;
   }
   return response;
 };
